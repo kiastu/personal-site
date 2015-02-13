@@ -1,19 +1,157 @@
-extends layout
 
-block content
-   h1 Welcome to Blog version 0.1! This template is pretty damn basic
+//
+  Linear by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+html
+    head
+        title David Kong
+        meta(http-equiv='content-type', content='text/html; charset=utf-8')
+        meta(name='description', content='Personal portfolio page of David Kong')
+        meta(name='keywords', content='David,Kong,Portfolio,Software Engineer,Digital Brand Media,Android')
+        link(href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900', rel='stylesheet', type='text/css')
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        link(rel='stylesheet', href='css/style.css')
+        link(rel='stylesheet', href='css/style-desktop.css')
+        link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+        link(rel='stylesheet', href='css/kiastuStyles.css')
+        script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+        link(rel='stylesheet', href = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
 
-   h2 Here is a post
-   p and here is some filler text for this particular post
+    body.homepage
+        // Header
+        #header
+            #nav-wrapper
+                // Nav
+                .container
+                    nav#nav.navbar-fixed-top
+                        ul
+                            li.active
+                                a(href='#header') Homepage
+                            li
+                                a(href='#about') About
+                            li
+                                a(href='#projects') Projects
 
-   h2 Here is a post
-   p and here is some filler text for this particular post
+            .container
+                // Logo
+                #logo
+                    h1
+                        a(href='#') David Kong
+                    span.tag Software Engineer, Automotive Enthusaist, Drinker of Bubble Tea
+        // Featured
+        #featured
+            .container
+                header
+                    h2 WELCOME
+                p
+                    | This is the personal website of
+                    strong  David Kong
+                    | , a third year Software Engineering student. I'm an obsessive hacker, and hopeful entrepreneur.
+                    //a(href = 'https://github.com/kiastu') My Github Profile!
 
-   h2 Here is a post
-   p and here is some filler text for this particular post
+    // Main
+    #main
+        .container
+            .row.thumbnails
+                section.col-lg-4
+                    .row.centre
+                        .col-sm-3
+                            i.glyphicon.glyphicon-user
+                        .col-sm-5
+                            h3 About Me
+                    p
+                        |Who I am, What I do, What I'm passionate about.
+                        |Narcissitic rant
+                    a.button.button-style1.buttonCentre(href='#about') Read More
+                section.col-lg-4
+                    .row
+                        .col-sm-3
+                            i.glyphicon.glyphicon-folder-open
+                        .col-sm-5
+                            h3.centre Projects
+                    p
+                        |Check out my projects! I mean, well, this site is an evolving project as well too!
+                    a.button.button-style1.buttonCentre(href='#projects') Read More
+                section.col-lg-4
+                    .row
+                        .col-sm-3
+                            i.glyphicon.glyphicon-file
+                        .col-sm-5
+                            h3.centre Résumé
+                    p
+                        | For those who'd rather just read a boring page. Or employers:3
+                    .col-sm-4
+                    a.button.button-style1.buttonCentre(href='#resume') Read More
+        #content.container
+            .row
+                section(id = 'about')
+                    img.img-circle(src='images/profile.png')
+                    header
+                        h2 About me
+                    p
+                        | Hi! I'm David, a student studying Software Engineering at Western University.
+            .row
+                section(id = 'projects')
+                    header
+                        h2 Projects
+                        .row.well
+                            .col-md-8
+                                img.img-rounded.projectImg(src="images/tweetmytesla.png")
+                            .col-md-4
+                                h1 Tweet My Tesla
+                                p Built for UofT Hacks 2015, placed top 5 for software hacks. Tweet my Tesla allows the user to control the Tesla car's functions via tweets, and also works as an in-car guestbook that passengers can sign. NodeJs back-end and Angular front-end.
+                        .row.well
+                            .col-md-4
+                                h1 DriveX
+                                p Built for MHacks V. DriveX is a Heads up Display application for Google glass that improves safety for everyday driving. I used principles of android's AIDL to allow for inter-process communication, and then implemented the async bluetooth server and client for android.
+                            .col-md-8
+                                img.img-rounded.projectImg(src="images/drivex.png")
+                        .row.well
+                            .col-md-8
+                                img.img-rounded.projectImg(src="images/flowt.png")
+                            .col-md-4
+                                h1 Flowt
+                                p Built for HackPrinceton Fall 2014. Flowt is an intuitive graphical calendar system built with a Laravel back-end, and BackboneJs front-end. Major features include activity categorization and dynamic zoom. See http://flowt.ch.
+                    h4.center Check out more projects on my Github portfolio:
+                    a.button.button-style3(href='https://github.com/kiastu')
+                        i.fa.fa-github
+                        //p Github Portfolio
+            .row
+                section(id = 'resume')
+                    //a.image.full(href='#')
+                    //    img(src='images/pic03.jpg', alt='')
+                    header
+                        h2 My Résumé
+                    p Website not doing it for you? Here's my downloadable Résumé.
+                    a.button.button-style1(href='/resume') Download Résumé
 
-   h2 Here is a post
-   p and here is some filler text for this particular post
 
-   h2 Here is a post
-   p and here is some filler text for this particular post
+    // Tweet
+    #tweet
+        .container
+            section
+                blockquote
+                    | “Talk is cheap. Show me the code - Linus Torvalds”
+    // Footer
+    #footer
+        .container
+                header
+                    h2 Get in touch
+                ul.contact
+                    li
+                        a.fa.fa-twitter(href='https://twitter.com/kiastu')
+                            span Twitter
+                    li.active
+                        a.fa.fa-facebook(href='https://facebook.com/dkkong')
+                            span Facebook
+                    li.active
+                        a.fa.fa-github(href='https://github.com/kiastu')
+                            span Github
+                    //li
+                    //    a.fa.fa-dribbble(href='#')
+                    //        span Pinterest
+                    //li
+                    //    a.fa.fa-tumblr(href='#')
+                    //        span Google+
+                p Thanks to TEMPLATED, from which this website was seeded.

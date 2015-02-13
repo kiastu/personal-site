@@ -1,6 +1,9 @@
 {
   "name": "node-api",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "~4.0.0",
     "mongoose": "~3.6.13",
@@ -8,6 +11,8 @@
     "jade": "*",
     "jeet": "~6.1.2",
     "mongoose-auto-increment": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "compression": "~1.4.0",
+    "method-override": "~2.3.1"
   }
 }
