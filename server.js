@@ -41,8 +41,6 @@ var port = process.env.PORT || 80; 		// set our port
 var username = "kiastu";
 var password = "kong0427";
 mongoose.connect("mongodb://" + username + ":" + password + "@ds051630.mongolab.com:51630/kiastu_blog");
-autoIncrement = require('mongoose-auto-increment');
-autoIncrement.initialize(mongoose);
 var BlogPost = require('./models/blogpost.js');
 
 
