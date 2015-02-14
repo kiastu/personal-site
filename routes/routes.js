@@ -10,7 +10,7 @@ module.exports = function(app){
     });
     app.get('/resume',function(req,res){
         console.log('Request for Resume.pdf');
-        var file = "../"+__dirname + '/Resume - David Kong.pdf';
+        var file = __dirname + '/Resume - David Kong.pdf';
         res.download(file);
     })
 };
