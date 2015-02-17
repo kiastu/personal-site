@@ -12,7 +12,7 @@ h2{
 }
 h3{
     font-size:2.5em;
-    text-decoration: underline;
+    font-weight:bold;
 }
 h4{
     font-size:1.5em;
@@ -80,6 +80,11 @@ body{
     -webkit-transform: translateY(10%);
     -ms-transform: translateY(10%);
     font-size:1.25em;
+}
+#featured h3{
+font-size:2.25em;
+    font-weight:bold;
+
 }
 #footer{
     background-color:#1f1f1f;
