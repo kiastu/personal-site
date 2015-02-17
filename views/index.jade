@@ -12,14 +12,10 @@ html
         link(href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900', rel='stylesheet', type='text/css')
         script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
         script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
-        script(src='js/materialize.js')
 
         link(rel='stylesheet', href='css/style.css')
         link(rel='stylesheet', href='css/style-desktop.css')
-        link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
-
-        link(rel='stylesheet', href = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
-        link(rel='stylesheet', href='css/materialize.css')
+        link(rel='stylesheet', href ='css/bootstrap.css')
         link(rel='stylesheet', href='css/kiastuStyles.css')
 
 
@@ -32,11 +28,11 @@ html
                     #nav.navbar-fixed-top
                         ul
                             li
-                                a(href='#header') Homepage
-                            li
-                                a(href='#about') About
+                                a(href='#header') Home
                             li
                                 a(href='#projects') Projects
+                            li
+                                a(href='#resume') Résumé
 
             .container
                 // Logo
@@ -45,133 +41,102 @@ html
                     span.tag Software Engineer, Developer, Entrepreneur
                     ul.contact
                         li
-                            a.fa.fa-twitter(href='https://twitter.com/kiastu')
-                                span
-                        li
                             a.fa.fa-facebook(href='https://facebook.com/dkkong')
-                                span
+                                span Facebook
                         li
                             a.fa.fa-github(href='https://github.com/kiastu')
-                                span
+                                span Github
                         li
                             a.fa.fa-linkedin(href='https://linkedin.com/in/davidkong94')
+                                span LinkedIn
+                        li
+                            a.fa.fa-twitter(href='https://twitter.com/kiastu')
+                                span Twitter
         // Featuredx
         #featured
             .container
-                header
-                    h2 WELCOME
-                p
-                    | This is the personal website of
-                    strong  David Kong
-                    | , an Android and Web developer.
-                    //a(href = 'https://github.com/kiastu') My Github Profile!
+                #greet.row
+                    .col-md-4
+                        img.img-circle(src='images/profile.png')
+                    .col-md-8.text-right
+                        p
+                            | Hi! I'm David, a student studying Software Engineering at Western University.
+                            br
+                            | I develop mainly web-based and Android applications, but love experimenting with new and interesting technologies!
+                            | Come check out my projects, and feel free to start a conversation!
+                            br
+                            br
+                            | I am currently looking for opportunities for Summer 2015.
+
+                #skills.row
+                    h3 Skills
+                    .col-md-4
+                        h4 Languages/Markup
+                        p Java·C++·C#·Javascript·Python·PHP·HTML·CSS·UML
+                    .col-md-4
+                        h4 Frameworks and Platforms
+                        p NodeJs·Express·AngularJs·Laravel·Android·QT
+                    .col-md-4
+                        h4 Databases
+                        p MySQL·MongoDB·SQLite
 
     // Main
-    #main.container
-        .row.thumbnails
-            .section.col.m4
-                .row.centre
-                    .col.s3
-                        i.glyphicon.glyphicon-user
-                    .col.s5
-                        h4 About Me
-                p
-                    |Find out a little more about me!
-                br
-                br
-                a.button.button-style1.buttonCentre(href='#about') Read More
-            .section.col.m4
-                .row
-                    .col.s3
-                        i.glyphicon.glyphicon-folder-open
-                    .col.s5
-                        h4.centre Projects
-                p
-                    |Check out my projects! This site is an evolving project as well.
-                br
-                a.button.button-style1.buttonCentre(href='#projects') Read More
-            .section.col.m4
-                .row
-                    .col.s3
-                        i.glyphicon.glyphicon-file
-                    .col.s5
-                        h4.centre Résumé
-                p
-                    |My Resume in PDF Format.
-                br
-                br
-                .col.s4
-                a.button.button-style1.buttonCentre(href='#resume') Read More
-
-        #content
+    #main
+        #content.container
             .row
-                .divider
-                .section(id = 'about')
-
-                    h2 About me
-                    img.img-circle(src='images/profile.png')
-                    p
-                        | Hi! I'm David, a student studying Software Engineering at Western University.I develop mainly web-based and Android applications.
-                        |However, I love experimenting with new technologies and discovering the new possibilities that accompany them.
-                        |I'm a big
-                .divider
-            .row
-                .section(id = 'projects')
+                section(id = 'projects')
                     h2 Projects
-                    .row.well
-                        .col.m4
-                            h3 Tweet My Tesla
-                            p Built for UofT Hacks 2015, placed top 5 for software hacks. Tweet my Tesla allows the user to control the Tesla car's functions via tweets, and also works as an in-car guestbook that passengers can sign. NodeJs back-end and Angular front-end.
-                        .col.m8
-                            img.img-rounded.projectImg(src="images/tweetmytesla.png")
-                    .row.well
-                        .col.m4
-                            h3 DriveX
-                            p Built for MHacks V. DriveX is a Heads up Display application for Google glass that improves safety for everyday driving. I used principles of android's AIDL to allow for inter-process communication, and then implemented the async bluetooth server and client for android.
-                        .col-md-8
-                            img.img-rounded.projectImg(src="images/drivex.png")
-                    .row.well
-                        .col-md-4
-                            h3 Flowt
-                            p Built for HackPrinceton Fall 2014. Flowt is an intuitive graphical calendar system built with a Laravel back-end, and BackboneJs front-end. Major features include activity categorization and dynamic zoom. See http://flowt.ch.
-
-                        .col-md-8
-                            img.img-rounded.projectImg(src="images/flowt.png")
+                    .panel.panel-default
+                        .row.panel-body
+                            .col-md-4
+                                h3 Tweet My Tesla
+                                p Built for UofT Hacks 2015, placed top 5 for software hacks. Born from an unsuccessful attempt to shell in to Tesla's onboard computer, Tweet my Tesla allows the user to control the Tesla car's functions via tweets. It also works as an in-car guestbook that passengers can sign.
+                                span.label.label-primary NodeJs
+                                span.label.label-primary AngularJs
+                            .col-md8
+                                img.img-rounded.projectImg(src="images/tweetmytesla.png")
+                    .panel.panel-default
+                        .row.panel-body
+                            .col-md-4
+                                h3 DriveX
+                                p Built for MHacks V. DriveX is a Heads up Display application for Google glass that improves safety for everyday driving. I used Android's AIDL to allow for inter-process communication, and then implemented the async bluetooth server and client for Android.
+                                span.label.label-primary Android
+                                span.label.label-primary Glass
+                            .col-md-8
+                                img.img-rounded.projectImg(src="images/drivex.png")
+                    .panel.panel-default
+                        .row.panel-body
+                            .col-md-4
+                                h3 Flowt
+                                p Built for HackPrinceton Fall 2014. Flowt is an intuitive graphical calendar system built with a Laravel back-end, and BackboneJs front-end. Major features include activity categorization and dynamic zoom.
+                                span.label.label-primary Laravel
+                                span.label.label-primary BackboneJs
+                            .col-md-8
+                                img.img-rounded.projectImg(src="images/flowt.png")
 
                     h4.center Check out more projects on my Github portfolio:
-                    a.button.button-style2.button(href='https://github.com/kiastu')
-                            .col.m3
-                                i.fa.fa-github
-                            .col.m9
-                                p Portfolio
+                    a.btn.btn-lg(href='https://github.com/kiastu')
+                        i.fa.fa-github
 
-            .divider
             .row
                 section(id = 'resume')
-                    //a.image.full(href='#')
-                    //    img(src='images/pic03.jpg', alt='')
-                    header
-                        h2 My Résumé
+                    h2 Résumé
                     p Website not doing it for you? Here's my downloadable Résumé.
-                    a.button.button-style1(href='/resume') Download Résumé
-
-
+                    a.btn(href='/resume') Download Résumé
     // Tweet
     #tweet
         .container
             section
                 blockquote
-                    | “Talk is cheap. Show me the code" - Linus Torvalds
+                    |“Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."
+                    small  Linus Torvalds
     // Footer
     #footer
         .container
                 header
                     h2 Get in touch
-                    #email dk.kong94@gmail.com
+                    a#email(href='mailto:dk.kong94@gmail.com') dk.kong94@gmail.com
                 ul.contact
-                    li.active
-                        a.fa.fa-twitter(href='https://twitter.com/kiastu')
-                            span Twitter
                     li
                         a.fa.fa-facebook(href='https://facebook.com/dkkong')
                             span Facebook
@@ -180,12 +145,10 @@ html
                             span Github
                     li
                         a.fa.fa-linkedin(href='https://linkedin.com/in/davidkong94')
-
-                    //li
-                    //    a.fa.fa-dribbble(href='#')
-                    //        span Pinterest
-                    //li
-                    //    a.fa.fa-tumblr(href='#')
-                    //        span Google+
-                p Thanks to TEMPLATED, from which this website was seeded.
-                p Last updated 2015-02-15
+                            span LinkedIn
+                    li
+                        a.fa.fa-twitter(href='https://twitter.com/kiastu')
+                            span Twitter
+                <!--Thanks to TEMPLATED, from which this website was seeded. Evolving bit by bit. After which point in modification, is a site no longer considered something templated?-->
+                <!--Just food for thought-->
+                p Last updated 2015-02-17
