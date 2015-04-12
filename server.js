@@ -43,40 +43,12 @@ var password = "kong0427";
 mongoose.connect("mongodb://" + username + ":" + password + "@ds051630.mongolab.com:51630/kiastu_blog");
 var BlogPost = require('./models/blogpost.js');
 
-
-// ROUTES FOR OUR API
-// =============================================================================
-// route middleware that will happen on every request
-//router.use(function (req, res, next) {
-//
-//    // log each request to the console
-//    console.log(req.method, req.url);
-//    console.log("Request received, processing.");
-//
-//    // continue doing what we were doing and go to the route
-//    next();
-//});
-
-//router.route('/')
-//    .get(function (req, res) {
-//        /*var posts = BlogPost.find().sort('-date').limit(5).exec(function(err,posts){
-//         if(err)
-//         res.send(err);
-//         else{
-//         res.render('./views/index',{postData: posts});
-//         }
-//
-//         });
-//         */
-//        res.send();
-//    });
-
-
 // REGISTER OUR ROUTES -------------------------------
 //path joins the dir, then we can navigate out in to views folder.
 
-require('./routes/routes')(app);
+require('./routes/routes');
 require('./routes/api')(app);
+
 
 
 // START THE SERVER
