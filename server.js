@@ -15,6 +15,7 @@ var mongoose = require('mongoose');
 var path = require('path');//this is used to join the public directory
 var compression = require('compression');
 var methodOverride = require('method-override');
+var serveStatic = require('serve-static');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -43,8 +44,15 @@ var port = process.env.PORT || 3000; 		// set our port
 // REGISTER OUR ROUTES -------------------------------
 //path joins the dir, then we can navigate out in to views folder.
 
+app.get('*',function(req,res,next){
+    next();
+});
+app.use('/experiments/800Squadron/',serveStatic(__dirname +'/experiments/800Squadron'));
+
 app.use('/',require('./routes/routes'));
 require('./routes/api')(app);
+
+//serve 800Squadron pages
 
 
 

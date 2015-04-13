@@ -2,10 +2,15 @@
  * Created by David on 2015-02-02.
  */
 module.exports = function(){
-    var path = require('path');
+    var path = require('path');    
     var express = require('express');
     var app = express();
     //list all the routes.
+    app.get('*',function(req,res,next){
+        console.log("At ",new Date().toString(),"request for: ",req.url, " from ip: ",req.ip);
+        next();
+
+    })
     app.get('/',function(req,res){
         console.log('Request for index file');
         res.render('index');
@@ -19,8 +24,7 @@ module.exports = function(){
         console.log('Request for experiments page');
         res.render('experiments');
     });
-    //serve 800Squadron pages
-    app.use('/experiments/800Squadron',express.static(path.join(__dirname, '/experiments/800Squadron')));
+    
 
     return app;
 }();
