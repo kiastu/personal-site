@@ -34,7 +34,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 
-var port = process.env.PORT || 3000; 		// set our port
+var port = process.env.PORT || 80; 		// set our port
 
 // DATABASE SHENANINGANS
 // =============================================================================
