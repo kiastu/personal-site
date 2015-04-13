@@ -17,8 +17,8 @@ module.exports = function(){
     });
     app.get('/experiments',function(req,res){
         console.log('Request for experiments page');
-        
-    }
+        res.render('experiments');
+    });
     //serve 800Squadron pages
     app.use('/experiments/800Squadron',express.static(path.join(__dirname, '/experiments/800Squadron')));
 

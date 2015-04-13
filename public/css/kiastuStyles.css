@@ -110,9 +110,9 @@ body {
 
 #nav {
     background-color: #37474F;
-    -webkit-box-shadow: 0 8px 6px -6px #1f1f1f;
-    -moz-box-shadow: 0 8px 6px -6px #1f1f1f;
-    box-shadow: 0 8px 6px -6px #1f1f1f;
+    -webkit-box-shadow: 0 8px 6px -4px #1f1f1f;
+    -moz-box-shadow: 0 6px 6px -4px #1f1f1f;
+    box-shadow: 0 7px 6px -4px #1f1f1f;
 }
 
 /* Fixes # nav positioning*/

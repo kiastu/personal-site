@@ -33,20 +33,17 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 
-var port = process.env.PORT || 80; 		// set our port
+var port = process.env.PORT || 3000; 		// set our port
 
 // DATABASE SHENANINGANS
 // =============================================================================
 
-var username = "kiastu";
-var password = "kong0427";
-mongoose.connect("mongodb://" + username + ":" + password + "@ds051630.mongolab.com:51630/kiastu_blog");
-var BlogPost = require('./models/blogpost.js');
+// No shenanigans right now.
 
 // REGISTER OUR ROUTES -------------------------------
 //path joins the dir, then we can navigate out in to views folder.
 
-require('./routes/routes');
+app.use('/',require('./routes/routes'));
 require('./routes/api')(app);
 
 
