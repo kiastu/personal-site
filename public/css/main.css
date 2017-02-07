@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  color: #FFF;
+  font-family: helvetica;
+  font-family: palanquin; }
+
+/** Content Styling **/
+.content {
+  background-image: url("../images/background.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: inline-flex; }
+  .content .content-body {
+    position: relative;
+    align-self: center;
+    max-width: 650px;
+    min-width: 300px;
+    padding: 0 40px; }
+  .content .content-header {
+    font-size: 2.5rem;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; }
+  .content .content-text {
+    font-size: 1.25rem;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; }
+  .content .hidden {
+    opacity: 0; }
+
+/** Social Icons **/
+.social {
+  display: inline; }
+  .social a {
+    padding: 0 5px;
+    font-size: 2rem;
+    color: #FFF;
+    text-decoration: none; }
+
+.work-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #FFF; }
+
+/*# sourceMappingURL=main.css.map */

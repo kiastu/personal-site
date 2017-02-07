@@ -1,0 +1,18 @@
+{
+  "name": "personal-site",
+  "description": "",
+  "main": "server.js",
+  "license": "MIT",
+  "homepage": "https://github.com/kiastu/personal-site",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage.js": "^2.8.8"
+  }
+}

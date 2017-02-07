@@ -1,8 +1,5 @@
-/**
- * Created by kiastu on 05/11/14.
- */
-// server.js
 
+// TODO: Sassify the css.
 // BASE SETUP
 // =============================================================================
 
@@ -10,8 +7,7 @@
 var express = require('express'); 		// call express
 var app = express(); 				// define our app using express
 var bodyParser = require('body-parser');
-var jade = require('jade');
-var mongoose = require('mongoose');
+var handlebars  = require('express-handlebars');
 var path = require('path');//this is used to join the public directory
 var compression = require('compression');
 var methodOverride = require('method-override');
@@ -23,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 //public directory serves public pages
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname,'/bower_components')));
 app.use(methodOverride());
 app.use(compression());
 
@@ -30,11 +27,12 @@ app.use(compression());
 //specify rendering folder
 app.set('views', __dirname + '/views');
 
-//set default templating engine;
-app.set('view engine', 'jade');
+//set default templating engine
+// Now that I think about it, probably not necessary, but I'll leave it here for now.
+app.engine('.hbs', handlebars({defaultLayout: 'main', extname: '.hbs'}));
+app.set('view engine', '.hbs');
 
-
-var port = process.env.PORT || 80; 		// set our port
+var port = process.env.PORT || 9999; 		// set our port
 
 // DATABASE SHENANINGANS
 // =============================================================================
@@ -47,16 +45,12 @@ var port = process.env.PORT || 80; 		// set our port
 app.get('*',function(req,res,next){
     next();
 });
-app.use('/experiments/800Squadron/',serveStatic(__dirname +'/experiments/800Squadron'));
 
-app.use('/',require('./routes/routes'));
-require('./routes/api')(app);
+var routes = require('./routes/routes');
 
-//serve 800Squadron pages
-
-
+app.use('/', routes);
 
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('Server running on port ' + port);
